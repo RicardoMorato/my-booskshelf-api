@@ -16,5 +16,5 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    api_key = 'AIzaSyDs4bjH1Rh8PeXzMyRxRLY19_lNYT0cdWk'
+    api_key = 'YOUR_API_KEY_HERE'
 ```
