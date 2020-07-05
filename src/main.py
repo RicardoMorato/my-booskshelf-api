@@ -1,6 +1,5 @@
 from fastapi import FastAPI
-from models.user import User
-from random import randint
+from models.user import UserIn, UserOut
 
 app = FastAPI()
 
@@ -15,8 +14,6 @@ async def root():
     return info
 
 
-@app.post('/users')
-async def create_item(user: User):
-    user_dict = user.dict()
-    user_dict.update({"user_id": randint(1, 100000)})
-    return user_dict
+@app.post("/user/", response_model=UserOut)
+async def create_user(user: UserIn):
+    return user
